@@ -1,8 +1,10 @@
-package com.mogydan.estore.OrdersService;
+package com.mogydan.estore.ordersservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+@EnableDiscoveryClient
 @SpringBootApplication
 public class OrdersServiceApplication {
 

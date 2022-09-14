@@ -1,4 +1,4 @@
-package com.mogydan.estore.OrdersService;
+package com.mogydan.estore.ordersservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
