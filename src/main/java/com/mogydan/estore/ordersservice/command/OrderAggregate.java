@@ -1,5 +1,6 @@
 package com.mogydan.estore.ordersservice.command;
 
+import com.mogydan.estore.ordersservice.command.commands.CreateOrderCommand;
 import com.mogydan.estore.ordersservice.core.events.OrderCreatedEvent;
 import com.mogydan.estore.ordersservice.core.model.OrderStatus;
 import lombok.NoArgsConstructor;
@@ -26,6 +27,7 @@ public class OrderAggregate {
     public OrderAggregate(CreateOrderCommand createOrderCommand) {
         OrderCreatedEvent orderCreatedEvent = new OrderCreatedEvent();
         BeanUtils.copyProperties(createOrderCommand, orderCreatedEvent);
+
         AggregateLifecycle.apply(orderCreatedEvent);
     }
 
@@ -34,8 +36,8 @@ public class OrderAggregate {
         this.orderId = orderCreatedEvent.getOrderId();
         this.productId = orderCreatedEvent.getProductId();
         this.userId = orderCreatedEvent.getUserId();
-        this.quantity = orderCreatedEvent.getQuantity();
         this.addressId = orderCreatedEvent.getAddressId();
+        this.quantity = orderCreatedEvent.getQuantity();
         this.orderStatus = orderCreatedEvent.getOrderStatus();
     }
 }
